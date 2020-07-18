@@ -11,7 +11,7 @@
   <h1 class="">ToDoリスト</h1>
   <div>
     <form>
-      <p class="horizontal"><input type="radio" name="status">すべて</p>
+      <p class="horizontal"><input type="radio" name="status" checked="checked">すべて</p>
       <p class="horizontal"><input type="radio" name="status">作業中</p>
       <p class="horizontal"><input type="radio" name="status">完了</p>
     </form>
@@ -30,7 +30,7 @@
     <h2>新規タスクの追加</h2>
     <form name="addForm">
       <input type="text" id="comment">
-      <input type="button" name="addButton" value="追加" onclick="addRow()">
+      <input type="button" id="addButton" value="追加">
     </form>
   </div>
   <script type="text/javascript" src="script.js">
