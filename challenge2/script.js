@@ -52,7 +52,6 @@ function deleteTask(event) {
   tr.remove();
   todos.splice(index, 1);
   reNumber();
-
 }
 
 function reNumber(){
