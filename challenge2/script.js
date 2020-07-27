@@ -27,10 +27,12 @@ function displayTodos() {
     cell2.appendChild(task);
 
     const cell3 = rows.insertCell(-1);
-    cell3.appendChild(createStateBtn());
+    const stateBtn = createStateBtn();
+    cell3.appendChild(stateBtn);
 
     const cell4 = rows.insertCell(-1);
-    cell4.appendChild(createDeletBtn());
+    const deletBtn = createDeletBtn();
+    cell4.appendChild(deletBtn);
   };
 }
 
