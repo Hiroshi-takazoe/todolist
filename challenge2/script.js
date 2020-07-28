@@ -33,7 +33,7 @@ function displayTodos() {
     const cell4 = rows.insertCell(-1);
     const deletBtn = createDeletBtn();
     cell4.appendChild(deletBtn);
-  };
+  }
 }
 
 function createStateBtn() {
@@ -66,8 +66,7 @@ function reNumber() {
   const tdNumber = document.getElementsByClassName('sequence');
   let idNumber = 0;
   for (var i = 0; i < todos.length; i++) {
-    let newIdNumber = document.createTextNode(idNumber);
     tdNumber[i].textContent = idNumber;
     idNumber++;
-  };
+  }
 }
