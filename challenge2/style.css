@@ -1,0 +1,47 @@
+body {
+  font-family: serif;
+}
+
+input[type="button"][name="statusButton"] {
+  border-style: solid;
+  border-radius: 5px;
+  border-width: 1px;
+  background-color: white;
+  font-size: 0.7rem;
+  height: 20px;
+  padding: 0;
+  width: 50px;
+}
+
+input[type="button"][name="delButton"] {
+  border-style: solid;
+  border-radius: 5px;
+  border-width: 1px;
+  background-color: white;
+  font-size: 0.7rem;
+  height: 20px;
+  padding: 0;
+  width: 40px;
+}
+
+form[name="addForm"] {
+  position: relative;
+}
+
+#addButton {
+  border-style: solid;
+  border-radius: 5px;
+  border-width: 1px;
+  background-color: white;
+  font-size: 0.7rem;
+  height: 20px;
+  padding: 0;
+  position: absolute;
+  top: 3px;
+  left: 160px;
+  width: 40px;
+}
+
+.horizontal {
+  display: inline;
+}
