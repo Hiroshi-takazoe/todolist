@@ -1,6 +1,6 @@
 const table = document.getElementById('task');
 const addButton = document.getElementById('addButton');
-const regex = /^\w+$/;
+const regex = /^\s+$/;
 const working = "作業中";
 const complete = "完了";
 const todos = [];
@@ -8,7 +8,9 @@ const todos = [];
 addButton.addEventListener('click', () => {
   const comment = document.getElementById('comment').value;
   const isComment = regex.test(comment);
-  if (isComment) {
+  if (isComment || comment === "") {
+    return false;
+  }else{
     const todo = {
       task: comment,
       status: working
