@@ -1,16 +1,16 @@
 const table = document.getElementById('task');
 const addButton = document.getElementById('addButton');
 const regex = /^\s+$/;
-const working = "作業中";
-const complete = "完了";
+const working = '作業中';
+const complete = '完了';
 const todos = [];
 
 addButton.addEventListener('click', () => {
   const comment = document.getElementById('comment').value;
   const isComment = regex.test(comment);
-  if (isComment || comment === "") {
+  if (isComment || comment === '') {
     return false;
-  }else{
+  } else {
     const todo = {
       task: comment,
       status: working
@@ -39,27 +39,27 @@ const displayTodos = () => {
     cell3.appendChild(stateBtn);
 
     const cell4 = rows.insertCell(-1);
-    const deletBtn = createDeletBtn();
-    cell4.appendChild(deletBtn);
+    const deleteBtn = createDeleteBtn();
+    cell4.appendChild(deleteBtn);
   }
 }
 
 const createStateBtn = () => {
-  const statusButton = document.createElement('input');
-  statusButton.type = 'button';
-  statusButton.name = 'statusButton';
-  statusButton.value = todos[todos.length - 1].status;
-  statusButton.onclick = changeStatus;
-  return statusButton;
+  const stateBtn = document.createElement('input');
+  stateBtn.type = 'button';
+  stateBtn.name = 'stateBtn';
+  stateBtn.value = todos[todos.length - 1].status;
+  stateBtn.onclick = changeStatus;
+  return stateBtn;
 }
 
-const createDeletBtn = () => {
-  const delButton = document.createElement('input');
-  delButton.type = 'button';
-  delButton.name = 'delButton';
-  delButton.value = '削除';
-  delButton.onclick = deleteTask;
-  return delButton;
+const createDeleteBtn = () => {
+  const deleteBtn = document.createElement('input');
+  deleteBtn.type = 'button';
+  deleteBtn.name = 'deleteBtn';
+  deleteBtn.value = '削除';
+  deleteBtn.onclick = deleteTask;
+  return deleteBtn;
 }
 const deleteTask = event => {
   const tr = event.target.parentNode.parentNode;
@@ -85,7 +85,7 @@ const changeStatus = event => {
   if (status === working) {
     todos[id].status = complete;
     event.target.setAttribute('value', complete);
-  }else{
+  } else {
     todos[id].status = working;
     event.target.setAttribute('value', working);
   }
