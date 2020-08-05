@@ -7,14 +7,13 @@ const status = document.getElementsByName('status');
 const todos = [];
 
 status[0].addEventListener('click', () => {
-  for (i = 1; i <= todos.length; i++) {
+    for (i = 1; i <= todos.length; i++) {
     table.rows[i].style.display = "";
   }
 });
 
 status[1].addEventListener('click', () => {
-
-  for (let i = 1; i <= todos.length; i++) {
+    for (let i = 1; i <= todos.length; i++) {
     let tableRow = table.rows[i];
     let isStatus = table.children[0].children[i].children[2].children[0].value;
     if (isStatus === "完了") {
@@ -26,7 +25,6 @@ status[1].addEventListener('click', () => {
 });
 
 status[2].addEventListener('click', () => {
-
   for (let i = 1; i <= todos.length; i++) {
     let tableRow = table.rows[i];
     let isStatus = table.children[0].children[i].children[2].children[0].value;
@@ -62,7 +60,6 @@ addButton.addEventListener('click', () => {
 });
 
 const displayTodos = () => {
-
   const rows = table.insertRow(-1);
   const cell1 = rows.insertCell(-1);
   cell1.className = 'sequence';
