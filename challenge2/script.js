@@ -6,32 +6,32 @@ const complete = '完了';
 const status = document.getElementsByName('status');
 const todos = [];
 
-status[0].addEventListener('click', () => {
-    for (i = 1; i <= todos.length; i++) {
-    table.rows[i].style.display = "";
+status[0].addEventListener('change', () => {
+    for (let i = 1; i <= todos.length; i++) {
+    table.rows[i].style.display = '';
   }
 });
 
-status[1].addEventListener('click', () => {
+status[1].addEventListener('change', () => {
     for (let i = 1; i <= todos.length; i++) {
     let tableRow = table.rows[i];
     let isStatus = table.children[0].children[i].children[2].children[0].value;
-    if (isStatus === "完了") {
-      tableRow.style.display = "none";
-    } else if (isStatus === "作業中") {
-      tableRow.style.display = "";
+    if (isStatus === '完了') {
+      tableRow.style.display = 'none';
+    } else if (isStatus === '作業中') {
+      tableRow.style.display = '';
     }
   }
 });
 
-status[2].addEventListener('click', () => {
+status[2].addEventListener('change', () => {
   for (let i = 1; i <= todos.length; i++) {
     let tableRow = table.rows[i];
     let isStatus = table.children[0].children[i].children[2].children[0].value;
-    if (isStatus === "作業中") {
-      tableRow.style.display = "none";
-    } else if (isStatus === "完了") {
-      tableRow.style.display = "";
+    if (isStatus === '作業中') {
+      tableRow.style.display = 'none';
+    } else if (isStatus === '完了') {
+      tableRow.style.display = '';
     }
   }
 });
@@ -41,21 +41,18 @@ addButton.addEventListener('click', () => {
   const isComment = regex.test(comment);
   if (isComment || comment === '') {
     return false;
+  }
+  const todo = {
+    task: comment,
+    status: working
+  }
+  todos.push(todo);
+  document.addForm.reset();
+  if (status[2].checked) {
+    displayTodos();
+    table.rows[todos.length].style.display = 'none';
   } else {
-    const todo = {
-      task: comment,
-      status: working
-    };
-    todos.push(todo);
-    document.addForm.reset();
-    if (status[0].checked) {
-      displayTodos();
-    } else if (status[1].checked) {
-      displayTodos();
-    } else {
-      displayTodos();
-      table.rows[todos.length].style.display = "none";
-    }
+    displayTodos();
   }
 });
 
